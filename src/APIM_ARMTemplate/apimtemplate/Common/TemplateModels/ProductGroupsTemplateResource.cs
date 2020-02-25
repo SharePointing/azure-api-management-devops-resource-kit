@@ -1,4 +1,6 @@
 ﻿using System.Collections.Generic;
+
+
 namespace Microsoft.Azure.Management.ApiManagement.ArmTemplates.Common
 {
     public class ProductGroupsTemplateResource
@@ -16,7 +18,12 @@ namespace Microsoft.Azure.Management.ApiManagement.ArmTemplates.Common
         public string description { get; set; }
         public string displayName { get; set; }
         public string type { get; set; }
+
+// Enabled nullability to surpress the warning. 
+        #nullable enable
         public string? externalId { get; set; }
+        #nullable disable
+
         public bool builtIn { get; set; }
     }
 }
