@@ -42,6 +42,8 @@ namespace Microsoft.Azure.Management.ApiManagement.ArmTemplates.Extract
             // api dependsOn
             List<string> apiDependsOn = new List<string>();
 
+            /// STWal: I *think* this is suposed to only output the namevalue pairs that are correlated to the APIs we are extracting
+            /// the actual behavior seems to be that all of them are output no matter what.!-- 
             if (namedValuesTemplate != null && namedValuesTemplate.resources.Count() != 0)
             {
                 dependsOnNamedValues = new string[] { $"[resourceId('Microsoft.Resources/deployments', '{namedValueDeploymentResourceName}')]" };

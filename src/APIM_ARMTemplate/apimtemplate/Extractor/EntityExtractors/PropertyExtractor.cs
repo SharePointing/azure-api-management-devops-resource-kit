@@ -37,6 +37,7 @@ namespace Microsoft.Azure.Management.ApiManagement.ArmTemplates.Extract
 
             List<TemplateResource> templateResources = new List<TemplateResource>();
 
+            ///STwal: Why aren't we using the list that was built with the apiDependson Array that is calling this ? 
             // pull all named values (properties) for service
             string properties = await GetPropertiesAsync(exc.sourceApimName, exc.resourceGroup);
             JObject oProperties = JObject.Parse(properties);
