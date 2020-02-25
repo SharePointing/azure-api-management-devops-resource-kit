@@ -59,9 +59,12 @@ namespace Microsoft.Azure.Management.ApiManagement.ArmTemplates.Extract
                     propertyTemplateResource.properties.value = $"[parameters('{ParameterNames.NamedValues}').{ExtractorUtils.GenValidParamName(propertyName, ParameterPrefix.Property)}]";
                 }
 
+                /// STWal: We *think* this needs to be If singleAPI or MultipleAPI then only use the "dependson" nv pairs, 
+                /// One could argue that we should only ever use the dependson NV pairs.!-- 
                 if (singleApiName == null)
                 {
-                    // if the user is executing a full extraction, extract all the loggers
+                    
+                    // if the user is executing a full extraction, extract all the NameValue Pairs
                     Console.WriteLine("'{0}' Named value found", propertyName);
                     templateResources.Add(propertyTemplateResource);
                 }
