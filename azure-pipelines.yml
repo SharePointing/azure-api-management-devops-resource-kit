@@ -40,7 +40,7 @@ steps:
     arguments: '-c Release --self-contained false'
     zipAfterPublish: false
 
-- script:
+- script: |
     cd $(System.DefaultWorkingDirectory)
     dir
 
