@@ -41,7 +41,9 @@ steps:
     zipAfterPublish: false
 
 - script: |
+    pwd
     cd $(System.DefaultWorkingDirectory)
+    pwd
     dir
 
 - publish: $(System.DefaultWorkingDirectory)
